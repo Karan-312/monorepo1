@@ -1,0 +1,73 @@
+DSA Revision Tracker - Project Blueprint
+========================================
+
+1. UI Foundation
+----------------
+- Modern layout: header, main content area
+- Table/grid to display DSA problems and revision data
+
+2. Data Model & State Management
+-------------------------------
+- Problem structure: name, attempts (dates, status, time), next review, last performance
+- Use React state (or Zustand/Redux if needed)
+
+3. Basic CRUD Functionality
+--------------------------
+- Add new problem
+- Edit problem details
+- Delete problem
+
+4. Revision Logic
+-----------------
+- Scoring system: +2 for "Myself", +1 for "Help"
+- Calculate performance rating (Excellent, Good, Mid, Poor, Skipped)
+- Auto-calculate next review date
+- Update last performance
+
+5. Persistence
+--------------
+- Start with localStorage for data
+- (Optional) Use Electron file system APIs for robust saving/loading
+
+6. UI/UX Enhancements
+---------------------
+- Keyboard shortcuts
+- Quick add
+- Smooth navigation
+- Modern styling (Material UI, Tailwind, or custom CSS)
+
+7. Notifications (Optional)
+--------------------------
+- Electron notification API for review reminders
+
+8. Packaging
+------------
+- Build and package app for Windows (and optionally other platforms)
+
+---
+
+Initial Sketch:
+===============
+
+| Problem Name | Rev 1 | Rev 2 | Rev 3 | Rev 4 | Next Review | Last Perf | Actions |
+|--------------|-------|-------|-------|-------|-------------|-----------|---------|
+| Two Sum      | 12/1  | 12/5  |       |       | 12/12       | Good      | Edit/Del|
+| ...          | ...   | ...   | ...   | ...   | ...         | ...       | ...     |
+
+- Each "Rev" column: date, status (Myself/Help), time taken
+- Next Review: auto-calculated
+- Last Perf: auto-calculated
+- Actions: edit/delete
+
+---
+
+Development Order:
+------------------
+1. Table UI with sample data
+2. Data model & state
+3. Add/edit/delete functionality
+4. Revision logic
+5. Persistence
+6. UI/UX polish
+7. Notifications
+8. Packaging 
